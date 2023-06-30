@@ -30,7 +30,7 @@
             </div>
             
             <div class="display"> 
-                <label for="display"> Add to Stocks </label> <br>
+                <label for="display"></label> <br>
                 <textarea id="display" name="display" row="10"> </textarea>
             </div>
             
@@ -49,8 +49,8 @@
             
             function show_local() {
                 let _display = JSON.parse(localStorage.getItem("display"));
-                document.getElementById('productcode').value = _display.fname;
-                document.getElementById('description').value = _display.age;
+                document.getElementById('productcode').value = _display.productcode;
+                document.getElementById('description').value = _display.description;
                 document.getElementById('quantity').value = _display.quantity;
                 document.getElementById('price').value = _display.price;
                 document.getElementById('display').value = Object.values(_display);
