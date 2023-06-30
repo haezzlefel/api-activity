@@ -11,54 +11,53 @@
    
 
 <div class="container py-5">
-    <div class="m-3 border border-secondary border radius">
+    <div class="m-3 border border-secondary">
     <div class="row py-4">        
         <div class="col-lg-8 pt-2 text-center">
-            
-        <label for="Product Code">  </label> <br>
-        <input type="text"  placeholder="Product Code" id="productcode" /> <br>
-        <label for="Description">  </label> <br>
-        <input type="text"  placeholder="Description" id="description"/> <br>
-        <label for="quantity">  </label> <br>
-        <input type="quantity"  placeholder="Quantity" id="quantity"/> <br>
-        <label for="price">  </label> <br>
-        <input type="price"  placeholder="Price" id="price"/> <br><br/>
+
+            <label for="productcode"></label> <br>
+            <input type="text" placeholder="Product Code"id="productcode"/> <br>
+            <label for="description"></label> <br>
+            <input type="text" placeholder="Description" id="description"/> <br>
+            <label for="quantity"> </label> <br>
+            <input type="number"placeholder="Quantity" id="quantity"/> <br>
+            <label for="price">  </label> <br/>
+            <input type="price" placeholder="Price"id="price"/> <br>
+            <br>
             <div class="right"> 
-            <input type="button" value="Add to Stocks " onclick="show_local()">
+                <input type="button" value="Add" onclick="add_local()">
+                <input type="button" value="Show" onclick="show_local()">
             </div>
+            
             <div class="display"> 
-            <label for="display"> Details </label> <br>
-            <textarea id="display" name="display" row="10"> </textarea>
+                <label for="display"> Add to Stocks </label> <br>
+                <textarea id="display" name="display" row="10"> </textarea>
             </div>
-        </div>
-<script> 
-
-function add_local() {
-    const display = {};
-    display.productcode = document.getElementById('productcode').value;
-    display.description = document.getElementById('description').value;
-    display.quantity = document.getElementById('quantity').value;
-    display.price = document.getElementById('price').value;
-
-    window.localStorage.setItem('display', JSON.stringify(display));
-}
-
-function show_local() {
-    let _display = JSON.parse(localStorage.getItem("display"));
-    document.getElementById('productcode').value = _display.productcode;
-    document.getElementById('description').value = _display.description;
-    document.getElementById('quantity').value = _display.quantity;
-    document.getElementById('price').value = _display.price;
-    document.getElementById('display').value = Object.values(_display);
-}
-</script>
-
-<br> <br>
-</div>
-</div>
-</span>
-</div>
-
-
-</body>
+            
+            <script> 
+            
+            function add_local() {
+                const display = {};
+                display.productcode = document.getElementById('productcode').value;
+                display.description = document.getElementById('description').value;
+                display.quantity = document.getElementById('quantity').value;
+                display.price = document.getElementById('price').value;
+                
+            
+                window.localStorage.setItem('display', JSON.stringify(display));
+            }
+            
+            function show_local() {
+                let _display = JSON.parse(localStorage.getItem("display"));
+                document.getElementById('productcode').value = _display.fname;
+                document.getElementById('description').value = _display.age;
+                document.getElementById('quantity').value = _display.quantity;
+                document.getElementById('price').value = _display.price;
+                document.getElementById('display').value = Object.values(_display);
+            }
+            </script>
+            
+            <br> <br>
+            
+    </body>
 </html>
