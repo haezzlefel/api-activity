@@ -347,7 +347,28 @@
             <i class="fas fa-gem me-3"></i>Toy Planet
           </h6>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio magni minus similique. Quo voluptates voluptas temporibus? Impedit ea laboriosam fuga voluptate suscipit accusamus dignissimos minima! Laboriosam quisquam placeat consequatur obcaecati?
+            <h5> Map location</h5>
+
+    <button onclick="getLocation()"> Click here</button>
+    <p id="position"> </p>
+    <script> 
+    const x = document.getElementById("position");
+    
+    function getLocation () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition (position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude + 
+        "<br> Longitude: " + position.coords.longitude;
+    }
+    </script>
+    <br> <br>
+
 
 
           </p>
